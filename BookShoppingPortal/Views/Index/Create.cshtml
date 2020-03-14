@@ -1,0 +1,22 @@
+﻿@model BookShoppingPortal.Entitity.Book
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Index", FormMethod.Post)) 
+{ 
+    <table class="table">
+        <tr><td>@Html.LabelFor(model => model.BookId) </td>
+        <td>@Html.TextBoxFor(model => model.BookId)
+        @Html.ValidationMessageFor(model => model.BookId)
+            </td>
+        </tr>
+        <tr><td>@Html.LabelFor(model => model.BookName)</td><td>@Html.TextBoxFor(model => model.BookName)@Html.ValidationMessageFor(model => model.BookName)</td></tr>
+        <tr><td>@Html.LabelFor(model => model.BookAuthor)</td><td>@Html.TextBoxFor(model => model.BookAuthor)@Html.ValidationMessageFor(model => model.BookAuthor)</td></tr>
+        <tr><td>@Html.LabelFor(model => model.Category)</td><td>@Html.TextBoxFor(model => model.Category)@Html.ValidationMessageFor(model => model.Category)</td></tr>
+        <tr><td>@Html.LabelFor(model => model.Price)</td><td>@Html.TextBoxFor(model => model.Price)@Html.ValidationMessageFor(model => model.Price)</td></tr>
+        <tr><td><input type="submit" value="Create"/></td><td></td></tr>
+    </table>
+}

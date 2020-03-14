@@ -1,0 +1,27 @@
+﻿@model BookShoppingPortal.Models.SignUpViewModel
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>Sign up</h2>
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+{
+<table class="table">
+    <tr><td>Name</td><td>@Html.TextBoxFor(model => model.Name)@Html.ValidationMessageFor(model => model.Name)</td></tr>
+    <tr><td>Email Id</td><td>@Html.TextBoxFor(model => model.EmailId)@Html.ValidationMessageFor(model => model.EmailId)</td></tr>
+    <tr><td>Password</td><td>@Html.PasswordFor(model => model.Password)@Html.ValidationMessageFor(model => model.Password)</td></tr>
+    <tr><td>Age</td><td>@Html.TextBoxFor(model => model.Age)@Html.ValidationMessageFor(model => model.Age)</td></tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Gender)</td>
+        <td>
+            @Html.RadioButtonFor(m => m.Gender, "Male") Male
+            @Html.RadioButtonFor(m => m.Gender, "female") Female
+            @Html.RadioButtonFor(m => m.Gender, "others") Others
+        </td>
+    </tr>
+    <tr><td><input type="submit" value="Sign up" /></td></tr>
+    <tr><td>Have an account?
+<a href="~/Account/Login">Log in</a></td></tr>
+</table>
+}

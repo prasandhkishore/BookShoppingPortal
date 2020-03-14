@@ -1,0 +1,16 @@
+﻿@model BookShoppingPortal.Entitity.Account
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<h2>Login</h2>
+<table class="table">
+    <tr><td>Email Id</td><td>@Html.TextBoxFor(model => model.MailId)@Html.ValidationMessageFor(model => model.MailId)</td></tr>
+    <tr><td>Password</td><td>@Html.PasswordFor(model => model.Password)@Html.ValidationMessageFor(model => model.Password)</td></tr>
+    <tr><td><input type="submit" value="Log in" /></td></tr>
+    <tr><td>
+    Don't have an account? <a href="~/Account/SignUp">Sign up</a>
+</td></tr>
+</table>
+

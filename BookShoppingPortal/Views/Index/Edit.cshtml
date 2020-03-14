@@ -1,0 +1,19 @@
+﻿@model BookShoppingPortal.Entitity.Book
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Index", FormMethod.Post))
+{
+    @Html.HiddenFor(model => Model.BookId)
+    <table>
+        <tr><td>@Html.LabelFor(model => model.BookName)</td><td>@Html.TextBoxFor(model => model.BookName)@Html.ValidationMessageFor(model => model.BookName)</td></tr>
+        <tr><td>@Html.LabelFor(model => model.BookAuthor)</td><td>@Html.TextBoxFor(model => model.BookAuthor)@Html.ValidationMessageFor(model => model.BookAuthor)</td></tr>
+        <tr><td>@Html.LabelFor(model => model.Category)</td><td>@Html.TextBoxFor(model => model.Category)@Html.ValidationMessageFor(model => model.Category)</td></tr>
+        <tr><td>@Html.LabelFor(model => model.Price)</td><td>@Html.TextBoxFor(model => model.Price)@Html.ValidationMessageFor(model => model.Price)</td></tr>
+        <tr><td><input type="submit" value="Edit" /></td><td></td></tr>
+    </table>
+}
+
